@@ -1,0 +1,15 @@
+# Paramètres du vtr_node (Étape 4). Le mode et le dossier sont passés par le launch.
+vtr_node:
+  ros__parameters:
+    n_features: 800
+    keyframe_dist: 0.30     # m entre deux keyframes
+    keyframe_yaw: 0.17      # rad (~10 deg) : keyframe aussi en virage
+    hfov: 1.2               # doit correspondre à <horizontal_fov> de la caméra
+    repeat_speed: 0.4       # m/s pendant le repeat
+    k_heading: 1.5          # gain cap visuel -> vitesse de lacet
+    w_max: 0.6              # rad/s
+    search_window: 3        # keyframes testées en avant
+    min_inliers: 25
+    lost_timeout: 2.0
+    rate: 10.0
+    publish_debug: true

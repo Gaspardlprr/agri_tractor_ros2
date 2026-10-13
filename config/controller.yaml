@@ -1,0 +1,18 @@
+# Paramètres du tractor_controller (Étape 2 / réglés à l'Étape 3)
+tractor_controller:
+  ros__parameters:
+    wheel_radius: 0.25            # doit correspondre à l'URDF
+    max_wheel_speed: 8.0          # rad/s (~2 m/s)
+    handle_position: [-1.0, 0.0, 0.65]   # guidon dans base_link (= CdM), X- = arrière
+    max_handle_force: 400.0       # N : effort humain réaliste (150-400 N)
+    k_ff: 750.0                   # N.m par rad/s demandé (anticipation)
+    kp: 150.0                     # N.m par rad/s d'erreur de lacet
+    ki: 80.0                      # N.m par rad
+    i_limit: 3.0
+    closed_loop: true             # false = force proportionnelle pure (k_ff seul)
+    cmd_timeout: 0.5
+    rate: 20.0
+    clear_gap: 0.015              # s entre /clear et la nouvelle force
+    clear_before_set: true
+    force_deadband: 2.0
+    link_name: "tractor::base_link"
